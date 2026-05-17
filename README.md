@@ -60,8 +60,3 @@ uvicorn app.main:app --reload
 ```
 
 Abra `http://127.0.0.1:8000` no navegador.
-
-## Controles
-
-- Aviao inferior: `4` esquerda, `5` tiro, `6` direita
-- Aviao superior: `A` esquerda, `S` tiro, `D` direita
