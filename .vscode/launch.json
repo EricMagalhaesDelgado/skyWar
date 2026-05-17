@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "name": "FastAPI main",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/backend/app/main.py",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "env": {
+            "PYTHONPATH": "${workspaceFolder}/src/backend"
+        },
+        "args": [
+            "--reload",
+            "--port",
+            "8000"
+        ]
+    }
+  ]
+}

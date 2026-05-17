@@ -3,5 +3,4 @@ __pycache__/
 *.sqlite3
 .venv/
 .env
-.vscode/
 node_modules/
