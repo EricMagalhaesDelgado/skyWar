@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Backend Debug",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/backend/app/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src/backend"
+      },
+      "args": [
+        "--reload"
+      ]
+    }
+  ]
+}

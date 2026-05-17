@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKY WAR</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-panel">
+        <button id="settings-button" class="settings-button" aria-label="Abrir configurações">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="5" r="1"></circle>
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="12" cy="19" r="1"></circle>
+          </svg>
+        </button>
+        <p class="eyebrow" data-i18n="subtitle_text">Batalha aerea local</p>
+        <h1>SKY WAR</h1>
+        <p class="subtitle" data-i18n="app_tagline">
+          Dois pilotos. Um disparo certeiro decide a batalha.
+        </p>
+        <form id="setup-form" class="setup-form">
+          <label data-i18n="fighter_top_label">
+            Piloto do topo
+            <input id="fighter-top" name="fighterTop" maxlength="30" placeholder="Nome do piloto superior" required />
+          </label>
+          <label data-i18n="fighter_bottom_label">
+            Piloto de baixo
+            <input id="fighter-bottom" name="fighterBottom" maxlength="30" placeholder="Nome do piloto inferior" required />
+          </label>
+          <button id="play-button" type="submit" data-i18n="play_button">PLAY</button>
+        </form>
+        <div class="controls-card">
+          <div>
+            <h2 data-i18n="controls_title">Controles</h2>
+            <p data-i18n="controls_top">Topo: A esquerda, S tiro, D direita</p>
+            <p data-i18n="controls_bottom">Baixo: 4 esquerda, 5 tiro, 6 direita</p>
+          </div>
+          <div>
+            <h2 data-i18n="objective_title">Objetivo</h2>
+            <p data-i18n="objective_text">Acertou um unico tiro? Vence a guerra.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="arena-panel">
+        <div class="status-bar">
+          <div>
+            <span class="status-label" data-i18n="status_top_label">Piloto superior</span>
+            <strong id="label-top">Aguardando...</strong>
+          </div>
+          <div>
+            <span class="status-label" data-i18n="status_bottom_label">Piloto inferior</span>
+            <strong id="label-bottom">Aguardando...</strong>
+          </div>
+        </div>
+
+        <div id="arena" class="arena" aria-label="Campo de batalha">
+          <div id="plane-top" class="plane plane-top" aria-label="Aviao superior" role="img"></div>
+          <div id="plane-bottom" class="plane plane-bottom" aria-label="Aviao inferior" role="img"></div>
+          <div id="battle-overlay" class="battle-overlay battle-overlay-hidden" aria-live="polite" aria-atomic="true"></div>
+        </div>
+
+        <div class="announcement" id="announcement" data-i18n="initial_announcement">
+          Preencha os nomes e pressione PLAY para iniciar.
+        </div>
+      </section>
+
+      <aside class="history-panel">
+        <div class="history-header">
+          <div>
+            <h2 data-i18n="history_title">Historico de batalhas</h2>
+            <p class="history-caption" data-i18n="history_caption">Resultados persistidos no backend.</p>
+          </div>
+          <button id="clear-history-button" class="secondary-button" type="button" data-i18n="clear_history_button">Excluir histórico</button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </aside>
+    </main>
+
+    <div id="history-modal" class="modal-overlay modal-hidden" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="history-modal-title" aria-describedby="history-modal-description">
+        <div class="modal-crest">SKY WAR</div>
+        <h2 id="history-modal-title" data-i18n="history_modal_title">Excluir histórico</h2>
+        <p id="history-modal-description" data-i18n="history_modal_description">Essa ação vai apagar todas as batalhas registradas. Deseja continuar?</p>
+        <div class="modal-actions">
+          <button id="history-modal-confirm" type="button" data-i18n="modal_confirm">Sim</button>
+          <button id="history-modal-cancel" class="secondary-button" type="button" data-i18n="modal_cancel">Não</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="settings-modal" class="modal-overlay modal-hidden" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+        <div class="modal-crest">SKY WAR</div>
+        <h2 id="settings-modal-title" data-i18n="settings_button">Configurações</h2>
+        <div class="settings-content">
+          <label for="language-select" data-i18n="language_setting">Idioma</label>
+          <select id="language-select" class="language-select">
+            <option value="pt" data-i18n="portuguese">Português</option>
+            <option value="zh" data-i18n="chinese">中文</option>
+            <option value="en" data-i18n="english">English</option>
+            <option value="es" data-i18n="spanish">Español</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
